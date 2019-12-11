@@ -1,4 +1,6 @@
 import React from 'react';
+// Import the card-list.component from the .jsx file
+import { CardList } from './components/card-list/card-list.component';
 import './App.css';
 
 class App extends React.Component {
@@ -26,16 +28,13 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                {
-                    // Map returns the return of the function passed
-                    // to it, iterated over every element in it
-                    // We create a monster function and return h1
-                    // with monster names
-                    // Pass the ID in as a key on the relevant element
-                    this.state.monsters.map(monster => (
-                    <h1 key={monster.id}> { monster.name } </h1>
-                    ))
-                }
+                <CardList>
+                    {
+                        this.state.monsters.map(monster => (
+                        <h1 key={monster.id}> { monster.name } </h1>
+                        ))
+                    }
+                </CardList>
             </div>
         )
     }
