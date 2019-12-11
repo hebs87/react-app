@@ -7,8 +7,14 @@ import './card-list.styles.css'
 // that are passed into the JSX code in the App.js
 // Children prop is in-built in the object
 // It is the value passed in between the CardList JSX tag
-export const CardList = (props) => {
+export const CardList = props => (
     // Add the card-list class to the div tag for styling
     // (from the .css file)
-    return <div className='card-list'>{ props.children }</div>
-}
+    <div className='card-list'>
+        {
+            props.monsters.map(monster => (
+                <h1 key={monster.id}> { monster.name } </h1>
+            ))
+        }
+    </div>
+);
