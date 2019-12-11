@@ -1,7 +1,5 @@
-# Code Institute
+# Monsters Rolodex
 
-Welcome Sunny Hebbar,
+This is a simple React app, created by following the video tutorial in Udemy's **_Complete React Developer in 2020 (w/ Redux, Hooks, GraphQL)_** course.
 
-We have preinstalled all of the tools you need to get started.
-
-Happy coding!
+The app displays each monster's details in its own card and also includes a search functionality.
