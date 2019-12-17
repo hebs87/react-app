@@ -10,7 +10,10 @@ class App extends React.Component {
         this.state = {
             // Set the initial state to an empty array
             // We want to fill this with the API data
-            monsters: []
+            // Set searchField to empty string
+            // We then fill it with search text
+            monsters: [],
+            searchField: ''
         };
     }
     
@@ -28,6 +31,11 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <input 
+                    type='search'
+                    placeholder='search monsters'
+                    onChange={e => this.setState({ searchField: e.target.value })}
+                />
                 <CardList monsters={ this.state.monsters } />
             </div>
         )
