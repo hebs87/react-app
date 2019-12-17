@@ -30,6 +30,10 @@ class App extends React.Component {
             .then(users => this.setState({ monsters: users }));
     }
 
+    handleChange = e => {
+        this.setState({ searchField: e.target.value })
+    }
+
     render() {
         // To filter the results from the searchField,
         // we need to destructure the original state array
@@ -47,7 +51,7 @@ class App extends React.Component {
             <div className="App">
                 <SearchBox
                     placeholder='search monsters'
-                    handleChange={e => this.setState({ searchField: e.target.value })}
+                    handleChange={this.handleChange}
                 />
                 <CardList
                     monsters={ filteredMonsters }
