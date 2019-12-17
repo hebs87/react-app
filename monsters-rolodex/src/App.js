@@ -30,6 +30,9 @@ class App extends React.Component {
             .then(users => this.setState({ monsters: users }));
     }
 
+    // We move the handleChange logic out of the SearchBox property
+    // We create an arrow function and define the setState value
+    // This enables us to reuse this in other places if needed
     handleChange = e => {
         this.setState({ searchField: e.target.value })
     }
