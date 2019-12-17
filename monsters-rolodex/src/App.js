@@ -29,6 +29,18 @@ class App extends React.Component {
     }
 
     render() {
+        // To filter the results from the searchField,
+        // we need to destructure the original state array
+        // Declaring the const in the way as below is the same as
+        // const monsters = this.state.monsters
+        // const searchField = this.state.searchField
+        const {monsters, searchField} = this.state;
+        // We then create a new const to get the filtered results
+        // We need to convert both the monster name and searchField
+        // values to lower case so that we don't get unwanted errors
+        const filteredMonsters = monsters.filter(monster =>
+            monster.name.toLowerCase().includes(searchField.toLowerCase())
+            )
         return (
             <div className="App">
                 <input 
@@ -36,7 +48,7 @@ class App extends React.Component {
                     placeholder='search monsters'
                     onChange={e => this.setState({ searchField: e.target.value })}
                 />
-                <CardList monsters={ this.state.monsters } />
+                <CardList monsters={ filteredMonsters } />
             </div>
         )
     }
